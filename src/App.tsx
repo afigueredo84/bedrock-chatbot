@@ -14,8 +14,9 @@ import { convertFileToUint8Array } from "./utils/utils";
 
 const AWS_REGION = "ca-central-1";
 const MODEL_ID = "arn:aws:bedrock:ca-central-1::foundation-model/anthropic.claude-3-haiku-20240307-v1:0";
-const MODEL_NAME = "assistant";
+const MODEL_NAME = "BNC-AmiBot";
 const USER_NAME = "user";
+const KNOWLEDGE_BASE_ID = "39OFTQ8YHL";
 
 const client = new BedrockAgentRuntime({
     region: AWS_REGION,
@@ -61,7 +62,7 @@ function App() {
                 retrieveAndGenerateConfiguration: { 
                   type: "KNOWLEDGE_BASE", // required
                   knowledgeBaseConfiguration: { 
-                    knowledgeBaseId: "EWGPS7TS1U", // required
+                    knowledgeBaseId: KNOWLEDGE_BASE_ID, // required
                     modelArn: MODEL_ID, // required
                     generationConfiguration: {},
                     orchestrationConfiguration: {},
