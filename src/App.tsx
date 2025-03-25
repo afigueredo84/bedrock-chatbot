@@ -102,7 +102,7 @@ function App() {
         addToHistory(prompt, USER_NAME);
         const response = await sendResponse(prompt, file);
         const parsedResponse = await parseResponse(response);
-        addToHistory(parsedResponse, MODEL_NAME);
+        addToHistory(parsedResponse, "assistant");
     };
 
     return (
